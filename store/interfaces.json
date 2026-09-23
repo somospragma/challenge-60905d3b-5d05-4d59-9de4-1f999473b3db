@@ -1,0 +1,15 @@
+{
+  "ProductCard": {
+    "properties": {
+      "name": "string",
+      "price": "number",
+      "stock": "number",
+      "rating": "number"
+    }
+  },
+  "ProductGrid": {
+    "properties": {
+      "products": "ProductCard[]"
+    }
+  }
+}

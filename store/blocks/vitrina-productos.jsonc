@@ -1,0 +1,40 @@
+{
+  "$schema": "https://unpkg.com/@vtex/api@1.x/docs/schemas/block.json",
+  "name": "vitrina-productos",
+  "version": "1.0.0",
+  "components": [
+    {
+      "id": "product-card",
+      "component": "ProductCard",
+      "props": {
+        "name": "{{name}}",
+        "price": "{{price}}",
+        "stock": "{{stock}}",
+        "rating": "{{rating}}"
+      }
+    },
+    {
+      "id": "product-grid",
+      "component": "ProductGrid",
+      "props": {
+        "products": "{{products}}"
+      }
+    }
+  ],
+  "animations": [
+    {
+      "id": "hover-effect",
+      "selector": ".product-card:hover",
+      "animation": {
+        "transform": "scale(1.05)"
+      }
+    },
+    {
+      "id": "transition-effect",
+      "selector": ".product-grid",
+      "animation": {
+        "transition": "transform 0.3s ease-in-out"
+      }
+    }
+  ]
+}

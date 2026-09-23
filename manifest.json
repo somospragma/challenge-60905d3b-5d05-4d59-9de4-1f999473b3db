@@ -1,0 +1,61 @@
+{
+  "vendor": "vtex",
+  "name": "storefront-microinteractions",
+  "version": "0.1.0",
+  "builders": {
+    "react": "3.x",
+    "store": "4.x",
+    "styles": "2.x"
+  },
+  "dependencies": {
+    "vtex.store-components": "3.15.0",
+    "vtex.styleguide": "9.15.0"
+  },
+  "peerDependencies": {
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "settings": {
+    "title": "Storefront Microinteractions",
+    "description": "Improves product showcase with microinteractions and smooth transitions.",
+    "store.name": "Storefront Microinteractions",
+    "store.supportedLocales": ["en-US", "es-ES"],
+    "store.theme": "vtex.store-theme@^0.1.0",
+    "store.assets": {
+      "styles": {
+        "main": "styles/configs/vitrina.css"
+      }
+    },
+    "store.blocks": {
+      "product-summary": {
+        "component": "ProductCard",
+        "composition": "children",
+        "allowed": ["product-summary-image", "product-summary-name", "product-summary-price"]
+      }
+    }
+  },
+  "policies": [
+    {
+      "name": "vtex.styleguide#product-summary",
+      "version": "^9.15.0",
+      "builders": ["react"]
+    },
+    {
+      "name": "vtex.store-components#product-summary",
+      "version": "^3.15.0",
+      "builders": ["react"]
+    }
+  ],
+  "scripts": {
+    "lint": "eslint --ext .ts,.tsx react/ store/ styles/",
+    "type-check": "tsc --noEmit",
+    "build": "vtex build"
+  },
+  "vtex": {
+    "title": "Storefront Microinteractions",
+    "description": "Enhances product showcase with animations and transitions for better UX.",
+    "vendor": "vtex",
+    "memory": "256Mi",
+    "timeout": 2
+  }
+}
